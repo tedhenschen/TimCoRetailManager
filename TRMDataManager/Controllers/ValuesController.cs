@@ -11,6 +11,9 @@ namespace TRMDataManager.Controllers
     [Authorize]
     public class ValuesController : ApiController
     {
+        //"Email":"TedHenschen@gmail.com",
+	    //"Password": "Th020388!",
+	    //"ConfirmPassword": "Th020388!"
         // GET api/values
         public IEnumerable<string> Get()
         {
