@@ -17,7 +17,6 @@
         </Menu>
         <Grid>
             <ContentControl x:Name="ActiveItem" Margin="5"/>
-            
         </Grid>
     </DockPanel>
 </Window>

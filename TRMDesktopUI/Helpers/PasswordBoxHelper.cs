@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
+/*
+ * https://stackoverflow.com/questions/30631522/caliburn-micro-support-for-passwordbox
+ * passwordbox helper found on stack overflow 
+ * answered by user https://stackoverflow.com/users/170407/fmm
+ */
+
 public static class PasswordBoxHelper
 {
     public static readonly DependencyProperty BoundPasswordProperty =
@@ -25,7 +31,6 @@ public static class PasswordBoxHelper
             box.PasswordChanged -= PasswordChanged;
             box.PasswordChanged += PasswordChanged;
         }
-
         return (string)d.GetValue(BoundPasswordProperty);
     }
 

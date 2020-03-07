@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TRMDesktopUI.Helpers;
 using TRMDesktopUI.ViewModels;
 
 namespace TRMDesktopUI
@@ -32,7 +33,8 @@ namespace TRMDesktopUI
             _container
                 //Iwindowmanager is an interface
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IAPIHelper,APIHelper>();
 
             //using reflection gettype (reflection is slow, use sparingly).  Only being used once in this app
             //This finds all the viewmodlels and put them in the _container adding interfaces to our viewmodel
