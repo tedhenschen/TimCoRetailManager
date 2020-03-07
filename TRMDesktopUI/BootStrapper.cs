@@ -16,6 +16,10 @@ namespace TRMDesktopUI
         public BootStrapper()
         {
             Initialize();
+            ConventionManager.AddElementConvention<System.Windows.Controls.PasswordBox>(
+            PasswordBoxHelper.BoundPasswordProperty,
+            "Password",
+            "PasswordChanged");
         }
 
         //Configure is ran once at the begining of the application
@@ -32,6 +36,7 @@ namespace TRMDesktopUI
 
             //using reflection gettype (reflection is slow, use sparingly).  Only being used once in this app
             //This finds all the viewmodlels and put them in the _container adding interfaces to our viewmodel
+            //This allows us to use a constructor to show different view models on the main page
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
                 .Where(type => type.Name.EndsWith("ViewModel"))
